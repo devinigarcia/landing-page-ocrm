@@ -45,7 +45,7 @@ export function IntegrationSection() {
                     </linearGradient>
                   </defs>
 
-                  {/* Orbital rings */}
+                  {/* Animated orbital rings */}
                   <circle
                     cx="350"
                     cy="350"
@@ -55,7 +55,17 @@ export function IntegrationSection() {
                     strokeWidth="2"
                     strokeDasharray="8,8"
                     opacity="0.4"
-                  />
+                  >
+                    <animateTransform
+                      attributeName="transform"
+                      attributeType="XML"
+                      type="rotate"
+                      from="0 350 350"
+                      to="360 350 350"
+                      dur="120s"
+                      repeatCount="indefinite"
+                    />
+                  </circle>
                   <circle
                     cx="350"
                     cy="350"
@@ -65,7 +75,17 @@ export function IntegrationSection() {
                     strokeWidth="2"
                     strokeDasharray="8,8"
                     opacity="0.3"
-                  />
+                  >
+                    <animateTransform
+                      attributeName="transform"
+                      attributeType="XML"
+                      type="rotate"
+                      from="0 350 350"
+                      to="-360 350 350"
+                      dur="180s"
+                      repeatCount="indefinite"
+                    />
+                  </circle>
                   <circle
                     cx="350"
                     cy="350"
@@ -75,7 +95,17 @@ export function IntegrationSection() {
                     strokeWidth="2"
                     strokeDasharray="8,8"
                     opacity="0.2"
-                  />
+                  >
+                    <animateTransform
+                      attributeName="transform"
+                      attributeType="XML"
+                      type="rotate"
+                      from="0 350 350"
+                      to="360 350 350"
+                      dur="240s"
+                      repeatCount="indefinite"
+                    />
+                  </circle>
 
                   {/* Center circle - OCRM */}
                   <circle cx="350" cy="350" r="80" fill="white" stroke="url(#purpleGradient)" strokeWidth="4" />
@@ -98,126 +128,138 @@ export function IntegrationSection() {
                     Centro
                   </text>
 
-                  {/* Journey stages - positioned using trigonometry for perfect circle */}
-                  {/* Captação de Leads - Top (0 degrees) */}
+                  {/* Orbiting journey stages - all elements grouped with rotation animation */}
                   <g>
-                    <circle cx="350" cy="80" r="45" fill="white" stroke="url(#orangeGradient)" strokeWidth="3" />
-                    <text
-                      x="350"
-                      y="78"
-                      textAnchor="middle"
-                      dominantBaseline="middle"
-                      className="text-sm font-semibold fill-card-foreground"
-                    >
-                      Captação
-                    </text>
-                    <text
-                      x="350"
-                      y="93"
-                      textAnchor="middle"
-                      dominantBaseline="middle"
-                      className="text-xs fill-muted-foreground"
-                    >
-                      de Leads
-                    </text>
-                  </g>
+                    <animateTransform
+                      attributeName="transform"
+                      attributeType="XML"
+                      type="rotate"
+                      from="0 350 350"
+                      to="360 350 350"
+                      dur="60s"
+                      repeatCount="indefinite"
+                    />
+                    
+                    {/* Captação de Leads - Top (0 degrees) */}
+                    <g>
+                      <circle cx="350" cy="80" r="45" fill="white" stroke="url(#orangeGradient)" strokeWidth="3" />
+                      <text
+                        x="350"
+                        y="78"
+                        textAnchor="middle"
+                        dominantBaseline="middle"
+                        className="text-sm font-semibold fill-card-foreground"
+                      >
+                        Captação
+                      </text>
+                      <text
+                        x="350"
+                        y="93"
+                        textAnchor="middle"
+                        dominantBaseline="middle"
+                        className="text-xs fill-muted-foreground"
+                      >
+                        de Leads
+                      </text>
+                    </g>
 
-                  {/* Qualificação - Top Right (45 degrees) */}
-                  <g>
-                    <circle cx="541" cy="159" r="45" fill="white" stroke="url(#orangeGradient)" strokeWidth="3" />
-                    <text
-                      x="541"
-                      y="159"
-                      textAnchor="middle"
-                      dominantBaseline="middle"
-                      className="text-sm font-semibold fill-card-foreground"
-                    >
-                      Qualificação
-                    </text>
-                  </g>
+                    {/* Qualificação - Top Right (45 degrees) */}
+                    <g>
+                      <circle cx="541" cy="159" r="45" fill="white" stroke="url(#orangeGradient)" strokeWidth="3" />
+                      <text
+                        x="541"
+                        y="159"
+                        textAnchor="middle"
+                        dominantBaseline="middle"
+                        className="text-sm font-semibold fill-card-foreground"
+                      >
+                        Qualificação
+                      </text>
+                    </g>
 
-                  {/* Proposta - Right (90 degrees) */}
-                  <g>
-                    <circle cx="620" cy="350" r="45" fill="white" stroke="url(#orangeGradient)" strokeWidth="3" />
-                    <text
-                      x="620"
-                      y="350"
-                      textAnchor="middle"
-                      dominantBaseline="middle"
-                      className="text-sm font-semibold fill-card-foreground"
-                    >
-                      Proposta
-                    </text>
-                  </g>
+                    {/* Proposta - Right (90 degrees) */}
+                    <g>
+                      <circle cx="620" cy="350" r="45" fill="white" stroke="url(#orangeGradient)" strokeWidth="3" />
+                      <text
+                        x="620"
+                        y="350"
+                        textAnchor="middle"
+                        dominantBaseline="middle"
+                        className="text-sm font-semibold fill-card-foreground"
+                      >
+                        Proposta
+                      </text>
+                    </g>
 
-                  {/* Fechamento - Bottom Right (135 degrees) */}
-                  <g>
-                    <circle cx="541" cy="541" r="45" fill="white" stroke="url(#orangeGradient)" strokeWidth="3" />
-                    <text
-                      x="541"
-                      y="541"
-                      textAnchor="middle"
-                      dominantBaseline="middle"
-                      className="text-sm font-semibold fill-card-foreground"
-                    >
-                      Fechamento
-                    </text>
-                  </g>
+                    {/* Fechamento - Bottom Right (135 degrees) */}
+                    <g>
+                      <circle cx="541" cy="541" r="45" fill="white" stroke="url(#orangeGradient)" strokeWidth="3" />
+                      <text
+                        x="541"
+                        y="541"
+                        textAnchor="middle"
+                        dominantBaseline="middle"
+                        className="text-sm font-semibold fill-card-foreground"
+                      >
+                        Fechamento
+                      </text>
+                    </g>
 
-                  {/* Pós-venda - Bottom (180 degrees) */}
-                  <g>
-                    <circle cx="350" cy="620" r="45" fill="white" stroke="url(#orangeGradient)" strokeWidth="3" />
-                    <text
-                      x="350"
-                      y="620"
-                      textAnchor="middle"
-                      dominantBaseline="middle"
-                      className="text-sm font-semibold fill-card-foreground"
-                    >
-                      Pós-venda
-                    </text>
-                  </g>
+                    {/* Pós-venda - Bottom (180 degrees) */}
+                    <g>
+                      <circle cx="350" cy="620" r="45" fill="white" stroke="url(#orangeGradient)" strokeWidth="3" />
+                      <text
+                        x="350"
+                        y="620"
+                        textAnchor="middle"
+                        dominantBaseline="middle"
+                        className="text-sm font-semibold fill-card-foreground"
+                      >
+                        Pós-venda
+                      </text>
+                    </g>
 
-                  {/* Retenção - Bottom Left (225 degrees) */}
-                  <g>
-                    <circle cx="159" cy="541" r="45" fill="white" stroke="url(#orangeGradient)" strokeWidth="3" />
-                    <text
-                      x="159"
-                      y="541"
-                      textAnchor="middle"
-                      dominantBaseline="middle"
-                      className="text-sm font-semibold fill-card-foreground"
-                    >
-                      Retenção
-                    </text>
-                  </g>
+                    {/* Retenção - Bottom Left (225 degrees) */}
+                    <g>
+                      <circle cx="159" cy="541" r="45" fill="white" stroke="url(#orangeGradient)" strokeWidth="3" />
+                      <text
+                        x="159"
+                        y="541"
+                        textAnchor="middle"
+                        dominantBaseline="middle"
+                        className="text-sm font-semibold fill-card-foreground"
+                      >
+                        Retenção
+                      </text>
+                    </g>
 
-                  {/* Expansão - Left (270 degrees) */}
-                  <g>
-                    <circle cx="80" cy="350" r="45" fill="white" stroke="url(#orangeGradient)" strokeWidth="3" />
-                    <text
-                      x="80"
-                      y="350"
-                      textAnchor="middle"
-                      dominantBaseline="middle"
-                      className="text-sm font-semibold fill-card-foreground"
-                    >
-                      Expansão
-                    </text>
-                  </g>
+                    {/* Expansão - Left (270 degrees) */}
+                    <g>
+                      <circle cx="80" cy="350" r="45" fill="white" stroke="url(#orangeGradient)" strokeWidth="3" />
+                      <text
+                        x="80"
+                        y="350"
+                        textAnchor="middle"
+                        dominantBaseline="middle"
+                        className="text-sm font-semibold fill-card-foreground"
+                      >
+                        Expansão
+                      </text>
+                    </g>
 
-                  {/* Advocacy - Top Left (315 degrees) */}
-                  <g>
-                    <circle cx="159" cy="159" r="45" fill="white" stroke="url(#orangeGradient)" strokeWidth="3" />
-                    <text
-                      x="159"
-                      y="159"
-                      textAnchor="middle"
-                      dominantBaseline="middle"
-                      className="text-sm font-semibold fill-card-foreground"
-                    >
-                      Advocacy
-                    </text>
+                    {/* Advocacy - Top Left (315 degrees) */}
+                    <g>
+                      <circle cx="159" cy="159" r="45" fill="white" stroke="url(#orangeGradient)" strokeWidth="3" />
+                      <text
+                        x="159"
+                        y="159"
+                        textAnchor="middle"
+                        dominantBaseline="middle"
+                        className="text-sm font-semibold fill-card-foreground"
+                      >
+                        Advocacy
+                      </text>
+                    </g>
                   </g>
                 </svg>
               </div>
