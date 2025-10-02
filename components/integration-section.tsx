@@ -370,7 +370,7 @@ export function IntegrationSection() {
             </Reveal>
           </div>
 
-          <div className="grid gap-8 lg:grid-cols-1 items-center max-w-4xl mx-auto">
+          <div className="hidden sm:grid gap-8 lg:grid-cols-1 items-center max-w-4xl mx-auto">
             <div className="space-y-6">
               <Reveal>
                 <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-8 shadow-lg border border-primary/20">

@@ -4,8 +4,8 @@ import { Instagram, Linkedin, Mail, MapPin, Phone, Globe } from "lucide-react"
 export function Footer() {
   return (
     <footer className="border-t border-border/50 bg-secondary/30">
-      <div className="container py-12 md:py-16">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="container py-8 md:py-12 lg:py-16 px-6 sm:px-8">
+        <div className="grid gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-primary/70">
@@ -77,7 +77,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-border/50 text-center text-sm text-muted-foreground">
+        <div className="mt-8 pt-6 md:mt-12 md:pt-8 border-t border-border/50 text-center text-sm text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} OCRM. Todos os direitos reservados.</p>
         </div>
       </div>

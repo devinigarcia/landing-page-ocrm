@@ -114,7 +114,7 @@ export function HeroSection() {
               </motion.p>
               
               <motion.h1 
-                className="text-4xl font-bold tracking-tight text-balance sm:text-5xl lg:text-6xl"
+                className="text-2xl font-bold tracking-tight text-balance sm:text-4xl md:text-5xl lg:text-6xl leading-tight"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
@@ -139,7 +139,7 @@ export function HeroSection() {
               </motion.h1>
               
               <motion.p 
-                className="text-xl text-muted-foreground text-pretty leading-relaxed"
+                className="text-base sm:text-lg md:text-xl text-muted-foreground text-pretty leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.8 }}
@@ -155,7 +155,7 @@ export function HeroSection() {
             <div className="w-full max-w-2xl mx-auto text-center">
               <motion.div 
                 ref={mockupRef}
-                className="relative mx-auto w-[32rem] h-[24rem] sm:w-[36rem] sm:h-[28rem] flex items-center justify-center"
+                className="relative mx-auto w-[280px] h-[200px] sm:w-[32rem] sm:h-[24rem] md:w-[36rem] md:h-[28rem] flex items-center justify-center"
                 initial={{ opacity: 0, scale: 0.8, rotateY: 25 }}
                 animate={{ opacity: 1, scale: 1, rotateY: 0 }}
                 transition={{ duration: 1, delay: 1, ease: "easeOut" }}
