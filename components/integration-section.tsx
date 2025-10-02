@@ -23,9 +23,9 @@ export function IntegrationSection() {
         <div className="space-y-12">
           <div className="text-center space-y-4">
             <Reveal>
-              <h2 className="text-3xl font-bold tracking-tight text-balance sm:text-4xl lg:text-5xl">
+              <h1 className="text-3xl font-bold tracking-tight text-balance sm:text-4xl lg:text-5xl">
                 Integração total para acompanhar a jornada do cliente
-              </h2>
+              </h1>
             </Reveal>
           </div>
 
@@ -148,7 +148,8 @@ export function IntegrationSection() {
                         y="78"
                         textAnchor="middle"
                         dominantBaseline="middle"
-                        className="text-sm font-semibold fill-card-foreground"
+                        className="text-sm font-semibold"
+                        fill="#1e293b"
                       >
                         Captação
                       </text>
@@ -157,7 +158,8 @@ export function IntegrationSection() {
                         y="93"
                         textAnchor="middle"
                         dominantBaseline="middle"
-                        className="text-xs fill-muted-foreground"
+                        className="text-xs"
+                        fill="#475569"
                       >
                         de Leads
                       </text>
@@ -171,7 +173,8 @@ export function IntegrationSection() {
                         y="159"
                         textAnchor="middle"
                         dominantBaseline="middle"
-                        className="text-sm font-semibold fill-card-foreground"
+                        className="text-sm font-semibold"
+                        fill="#1e293b"
                       >
                         Qualificação
                       </text>
@@ -185,7 +188,8 @@ export function IntegrationSection() {
                         y="350"
                         textAnchor="middle"
                         dominantBaseline="middle"
-                        className="text-sm font-semibold fill-card-foreground"
+                        className="text-sm font-semibold"
+                        fill="#1e293b"
                       >
                         Proposta
                       </text>
@@ -199,7 +203,8 @@ export function IntegrationSection() {
                         y="541"
                         textAnchor="middle"
                         dominantBaseline="middle"
-                        className="text-sm font-semibold fill-card-foreground"
+                        className="text-sm font-semibold"
+                        fill="#1e293b"
                       >
                         Fechamento
                       </text>
@@ -213,7 +218,8 @@ export function IntegrationSection() {
                         y="620"
                         textAnchor="middle"
                         dominantBaseline="middle"
-                        className="text-sm font-semibold fill-card-foreground"
+                        className="text-sm font-semibold"
+                        fill="#1e293b"
                       >
                         Pós-venda
                       </text>
@@ -227,7 +233,8 @@ export function IntegrationSection() {
                         y="541"
                         textAnchor="middle"
                         dominantBaseline="middle"
-                        className="text-sm font-semibold fill-card-foreground"
+                        className="text-sm font-semibold"
+                        fill="#1e293b"
                       >
                         Retenção
                       </text>
@@ -241,7 +248,8 @@ export function IntegrationSection() {
                         y="350"
                         textAnchor="middle"
                         dominantBaseline="middle"
-                        className="text-sm font-semibold fill-card-foreground"
+                        className="text-sm font-semibold"
+                        fill="#1e293b"
                       >
                         Expansão
                       </text>
@@ -255,7 +263,8 @@ export function IntegrationSection() {
                         y="159"
                         textAnchor="middle"
                         dominantBaseline="middle"
-                        className="text-sm font-semibold fill-card-foreground"
+                        className="text-sm font-semibold"
+                        fill="#1e293b"
                       >
                         Advocacy
                       </text>

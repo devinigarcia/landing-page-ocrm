@@ -101,7 +101,9 @@ export function ComparisonSection() {
                     ].map((feature, index) => (
                       <tr key={index} className="hover:bg-secondary/30">
                         <td className="px-6 py-4 text-card-foreground font-medium">{feature}</td>
-                        <td className="px-6 py-4 text-center text-2xl text-muted-foreground">–</td>
+                        <td className="px-6 py-4 text-center text-2xl text-muted-foreground">
+                          {index === 0 ? "✓" : "–"}
+                        </td>
                         <td className="px-6 py-4 text-center text-2xl text-primary bg-primary/5">✓</td>
                       </tr>
                     ))}
@@ -127,9 +129,9 @@ export function ComparisonSection() {
             <div className="bg-secondary rounded-xl p-8 md:p-12 shadow-xl border border-border/50">
               <div className="space-y-8">
                 <div className="text-center space-y-4">
-                  <h3 className="text-2xl md:text-3xl font-bold">
+                  <h1 className="text-2xl md:text-3xl font-bold">
                     O funil nunca foi suficiente
-                  </h3>
+                  </h1>
                   <p className="text-lg text-muted-foreground leading-relaxed">
                     Você precisa gerenciar suas máquinas, seus caixas, seus times, sua logística, suas
                     propagandas e o seu principal ativo, o cliente, vai ficando em segundo plano.

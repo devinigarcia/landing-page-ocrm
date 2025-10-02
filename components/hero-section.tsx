@@ -46,15 +46,15 @@ export function HeroSection() {
   
   return (
     <section ref={sectionRef} id="contato" className="relative overflow-hidden min-h-screen">
-      {/* Background animado com gradientes dinâmicos */}
-      <div className="absolute inset-0">
+      {/* Background animado com gradientes dinâmicos - tema escuro */}
+      <div className="absolute inset-0 bg-slate-900">
         <motion.div 
-          className="absolute inset-0 bg-gradient-to-br from-blue-50/20 via-purple-50/10 to-orange-50/20"
+          className="absolute inset-0 bg-gradient-to-br from-slate-800/50 via-purple-900/30 to-slate-700/40"
           animate={{ 
             background: [
-              "linear-gradient(45deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.05) 50%, rgba(251, 146, 60, 0.1) 100%)",
-              "linear-gradient(225deg, rgba(147, 51, 234, 0.1) 0%, rgba(251, 146, 60, 0.05) 50%, rgba(59, 130, 246, 0.1) 100%)",
-              "linear-gradient(45deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.05) 50%, rgba(251, 146, 60, 0.1) 100%)"
+              "linear-gradient(45deg, rgba(30, 41, 59, 0.8) 0%, rgba(88, 28, 135, 0.4) 50%, rgba(51, 65, 85, 0.6) 100%)",
+              "linear-gradient(225deg, rgba(88, 28, 135, 0.6) 0%, rgba(51, 65, 85, 0.4) 50%, rgba(30, 41, 59, 0.8) 100%)",
+              "linear-gradient(45deg, rgba(30, 41, 59, 0.8) 0%, rgba(88, 28, 135, 0.4) 50%, rgba(51, 65, 85, 0.6) 100%)"
             ]
           }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
@@ -64,7 +64,7 @@ export function HeroSection() {
         {Array.from({ length: 15 }).map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-2 h-2 bg-primary/20 rounded-full"
+            className="absolute w-2 h-2 bg-purple-400/30 rounded-full"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -215,7 +215,7 @@ export function HeroSection() {
                   transition={{ duration: 0.3 }}
                 />
                 <motion.div
-                  className="absolute inset-0 bg-white/20"
+                  className="absolute inset-0 bg-slate-800/20"
                   initial={{ scale: 0, opacity: 0 }}
                   whileTap={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 0.1 }}
