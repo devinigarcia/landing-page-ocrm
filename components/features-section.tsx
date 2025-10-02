@@ -39,13 +39,17 @@ export function FeaturesSection() {
   const gridRef = useRef<HTMLDivElement | null>(null)
   const inView = useInView(gridRef, { amount: 0.3, once: true })
   const [order, setOrder] = useState<number[]>(() => features.map((_, i) => i))
+  const [isReordering, setIsReordering] = useState(false)
 
   useEffect(() => {
-    if (!inView) return
-    // troca por pares: [1,0,3,2,...]
-    const swapped = features.map((_, i) => (i % 2 === 0 ? i + 1 : i - 1)).map((i) => (i < features.length ? i : i - 1))
-    setOrder(swapped)
-  }, [inView])
+    if (!inView || isReordering) return
+    setIsReordering(true)
+    // Pequeno delay para evitar conflitos com animações iniciais
+    setTimeout(() => {
+      const swapped = features.map((_, i) => (i % 2 === 0 ? i + 1 : i - 1)).map((i) => (i < features.length ? i : i - 1))
+      setOrder(swapped)
+    }, 600)
+  }, [inView, isReordering])
 
   return (
         <section className="relative py-16 md:py-24 lg:py-32 overflow-hidden">
