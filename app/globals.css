@@ -4,59 +4,77 @@
 
 @layer base {
   :root {
-    /* Modo escuro permanente com cores antigas do OCRM */
-    --background: 218 27% 8%; /* slate-900 */
-    --foreground: 210 40% 98%; /* texto branco */
-    --card: 217 33% 12%; /* slate-800 */
-    --card-foreground: 210 40% 98%;
-    --popover: 217 33% 12%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 263 85% 70%; /* roxo vibrante do OCRM */
-    --primary-foreground: 210 40% 98%;
-    --secondary: 215 28% 17%; /* slate-700 */
-    --secondary-foreground: 210 40% 98%;
-    --muted: 215 28% 17%;
-    --muted-foreground: 217 11% 65%; /* cinza médio */
-    --accent: 263 85% 70%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 215 28% 17%;
-    --input: 215 28% 17%;
-    --ring: 263 85% 70%;
-    --chart-1: 263 85% 70%; /* roxo principal */
-    --chart-2: 280 100% 70%; /* magenta */
-    --chart-3: 200 100% 70%; /* ciano */
-    --chart-4: 120 100% 70%; /* verde */
-    --chart-5: 60 100% 70%; /* amarelo */
+    /* Identidade Visual OCRM - Paleta de Cores Oficial */
+    
+    /* Cores Primárias - Amarelos */
+    --yellow-bright: 60 100% 50%; /* RGB(255, 234, 0) */
+    --yellow-dark: 51 100% 45%; /* RGB(229, 186, 0) */
+    --yellow-light: 60 100% 84%; /* #FFF7AC - PANTONE 600 C */
+    
+    /* Cores Secundárias - Cinzas */
+    --gray-black: 0 0% 9%; /* #161616 - PANTONE Black 6 C */
+    --gray-dark: 0 0% 19%; /* #303030 - PANTONE 447 C */
+    --gray-medium: 0 0% 28%; /* #474747 - PANTONE 418 C */
+    --gray-light: 0 0% 68%; /* #AEAEAE - PANTONE Cool Gray 5 C */
+    --gray-very-light: 0 0% 91%; /* #E8E8E8 - PANTONE 663 C */
+    
+    /* Sistema de Cores do Site */
+    --background: 0 0% 100%; /* branco */
+    --foreground: var(--gray-black); /* #161616 */
+    --card: 0 0% 100%;
+    --card-foreground: var(--gray-black);
+    --popover: 0 0% 100%;
+    --popover-foreground: var(--gray-black);
+    --primary: var(--yellow-bright); /* RGB(255, 234, 0) - Amarelo principal */
+    --primary-foreground: var(--gray-black);
+    --secondary: var(--gray-very-light); /* #E8E8E8 - Cinza muito claro */
+    --secondary-foreground: var(--gray-black);
+    --muted: var(--gray-very-light);
+    --muted-foreground: var(--gray-medium); /* #474747 - Cinza médio */
+    --accent: var(--yellow-dark); /* RGB(229, 186, 0) - Amarelo escuro */
+    --accent-foreground: var(--gray-black);
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: var(--gray-light); /* #AEAEAE - Cinza claro */
+    --input: var(--gray-light);
+    --ring: var(--yellow-bright);
+    
+    /* Cores para gráficos e dados */
+    --chart-1: var(--yellow-bright); /* RGB(255, 234, 0) */
+    --chart-2: var(--gray-black); /* #161616 */
+    --chart-3: var(--yellow-light); /* #FFF7AC */
+    --chart-4: var(--gray-medium); /* #474747 */
+    --chart-5: var(--yellow-dark); /* RGB(229, 186, 0) */
+    
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 218 27% 8%;
-    --foreground: 210 40% 98%;
-    --card: 217 33% 12%;
-    --card-foreground: 210 40% 98%;
-    --popover: 217 33% 12%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 263 85% 70%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 215 28% 17%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 215 28% 17%;
-    --muted-foreground: 217 11% 65%;
-    --accent: 263 85% 70%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 215 28% 17%;
-    --input: 215 28% 17%;
-    --ring: 263 85% 70%;
-    --chart-1: 263 85% 70%;
-    --chart-2: 280 100% 70%;
-    --chart-3: 200 100% 70%;
-    --chart-4: 120 100% 70%;
-    --chart-5: 60 100% 70%;
+    /* Modo Escuro - Paleta Oficial OCRM */
+    --background: var(--gray-black); /* #161616 - Preto da marca */
+    --foreground: 0 0% 98%; /* branco */
+    --card: var(--gray-dark); /* #303030 - Cinza escuro */
+    --card-foreground: 0 0% 98%;
+    --popover: var(--gray-dark);
+    --popover-foreground: 0 0% 98%;
+    --primary: var(--yellow-bright); /* RGB(255, 234, 0) - Amarelo principal */
+    --primary-foreground: var(--gray-black);
+    --secondary: var(--gray-medium); /* #474747 - Cinza médio */
+    --secondary-foreground: 0 0% 98%;
+    --muted: var(--gray-medium);
+    --muted-foreground: var(--gray-light); /* #AEAEAE - Cinza claro */
+    --accent: var(--yellow-dark); /* RGB(229, 186, 0) - Amarelo escuro */
+    --accent-foreground: var(--gray-black);
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: var(--gray-medium); /* #474747 */
+    --input: var(--gray-medium);
+    --ring: var(--yellow-bright);
+    --chart-1: var(--yellow-bright); /* RGB(255, 234, 0) */
+    --chart-2: 0 0% 98%; /* branco */
+    --chart-3: var(--yellow-light); /* #FFF7AC */
+    --chart-4: var(--gray-light); /* #AEAEAE */
+    --chart-5: var(--yellow-dark); /* RGB(229, 186, 0) */
   }
 }
 
@@ -65,7 +83,37 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;  
+    @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  
+  /* Melhorar scroll suave em dispositivos móveis */
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Prevenir zoom em inputs em iOS */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  textarea,
+  select {
+    font-size: 16px;
+  }
+  
+  /* Melhorar performance de animações em mobile */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
@@ -82,6 +130,170 @@
   .text-pretty {
     text-wrap: pretty;
   }
+  
+  /* Cores da Paleta Oficial OCRM */
+  .text-yellow-bright {
+    color: hsl(var(--yellow-bright));
+  }
+  
+  .text-yellow-dark {
+    color: hsl(var(--yellow-dark));
+  }
+  
+  .text-yellow-light {
+    color: hsl(var(--yellow-light));
+  }
+  
+  .text-gray-black {
+    color: hsl(var(--gray-black));
+  }
+  
+  .text-gray-dark {
+    color: hsl(var(--gray-dark));
+  }
+  
+  .text-gray-medium {
+    color: hsl(var(--gray-medium));
+  }
+  
+  .text-gray-light {
+    color: hsl(var(--gray-light));
+  }
+  
+  .text-gray-very-light {
+    color: hsl(var(--gray-very-light));
+  }
+  
+  .bg-yellow-bright {
+    background-color: hsl(var(--yellow-bright));
+  }
+  
+  .bg-yellow-dark {
+    background-color: hsl(var(--yellow-dark));
+  }
+  
+  .bg-yellow-light {
+    background-color: hsl(var(--yellow-light));
+  }
+  
+  .bg-gray-black {
+    background-color: hsl(var(--gray-black));
+  }
+  
+  .bg-gray-dark {
+    background-color: hsl(var(--gray-dark));
+  }
+  
+  .bg-gray-medium {
+    background-color: hsl(var(--gray-medium));
+  }
+  
+  .bg-gray-light {
+    background-color: hsl(var(--gray-light));
+  }
+  
+  .bg-gray-very-light {
+    background-color: hsl(var(--gray-very-light));
+  }
+  
+  .border-yellow-bright {
+    border-color: hsl(var(--yellow-bright));
+  }
+  
+  .border-yellow-dark {
+    border-color: hsl(var(--yellow-dark));
+  }
+  
+  .border-gray-black {
+    border-color: hsl(var(--gray-black));
+  }
+  
+  .border-gray-dark {
+    border-color: hsl(var(--gray-dark));
+  }
+  
+  .border-gray-medium {
+    border-color: hsl(var(--gray-medium));
+  }
+  
+  .border-gray-light {
+    border-color: hsl(var(--gray-light));
+  }
+  
+  /* Classes responsivas personalizadas */
+  .container-responsive {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .text-responsive-xs {
+    @apply text-xs sm:text-sm;
+  }
+  
+  .text-responsive-sm {
+    @apply text-sm sm:text-base;
+  }
+  
+  .text-responsive-base {
+    @apply text-base sm:text-lg;
+  }
+  
+  .text-responsive-lg {
+    @apply text-lg sm:text-xl md:text-2xl;
+  }
+  
+  .text-responsive-xl {
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl;
+  }
+  
+  .text-responsive-2xl {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl;
+  }
+  
+  .text-responsive-3xl {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl;
+  }
+  
+  .spacing-responsive {
+    @apply py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24;
+  }
+  
+  .grid-responsive {
+    @apply grid gap-4 sm:gap-6 md:gap-8;
+  }
+  
+  .grid-responsive-2 {
+    @apply grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8;
+  }
+  
+  .grid-responsive-3 {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8;
+  }
+  
+  .grid-responsive-4 {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8;
+  }
+  
+  /* Melhorar touch targets em mobile */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+  
+  /* Safe area para dispositivos com notch */
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  .safe-area-left {
+    padding-left: env(safe-area-inset-left);
+  }
+  
+  .safe-area-right {
+    padding-right: env(safe-area-inset-right);
+  }
 }
 
 @keyframes gradient {
@@ -94,4 +306,20 @@
   100% {
     background-position: 0% 50%;
   }
+}
+
+/* Animação Orbital para Cards */
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Formulário de Contato - Cor Fixa */
+.contact-form-custom {
+  background-color: rgb(174, 174, 174) !important;
+  color: rgb(0, 0, 0) !important;
 }

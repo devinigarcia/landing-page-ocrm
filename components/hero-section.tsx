@@ -5,6 +5,7 @@ import { Reveal, Stagger, StaggerItem, MotionDiv } from "@/components/animations
 import { useEffect, useState, useRef } from "react"
 import { PhoneMockup } from "@/components/phone-mockup"
 import { motion, useMotionValue, useSpring, useInView } from "framer-motion"
+import { Logo } from "@/components/logo"
 
 export function HeroSection() {
   const [offsetY, setOffsetY] = useState(0)
@@ -42,120 +43,64 @@ export function HeroSection() {
     setIsFormVisible(!isFormVisible)
   }
 
+  const openWhatsApp = () => {
+    const phoneNumber = '5511999999999' // Exemplo: 55 (código do país) 11 (DDD) 999999999 (número)
+    const message = encodeURIComponent('Olá! Gostaria de saber mais sobre o OCRM.')
+    window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank')
+  }
+
+  const openDemo = () => {
+    // Abrir demonstração - pode ser um modal ou link externo
+    window.open('https://demo.ocrm.com.br', '_blank')
+  }
+
   const titleText = "Imagine ter toda a jornada do seu cliente na palma da sua mão?"
   
   return (
-    <section ref={sectionRef} id="contato" className="relative overflow-hidden min-h-screen">
-      {/* Background animado com gradientes dinâmicos - tema escuro */}
-      <div className="absolute inset-0 bg-slate-900">
-        <motion.div 
-          className="absolute inset-0 bg-gradient-to-br from-slate-800/50 via-purple-900/30 to-slate-700/40"
-          animate={{ 
-            background: [
-              "linear-gradient(45deg, rgba(30, 41, 59, 0.8) 0%, rgba(88, 28, 135, 0.4) 50%, rgba(51, 65, 85, 0.6) 100%)",
-              "linear-gradient(225deg, rgba(88, 28, 135, 0.6) 0%, rgba(51, 65, 85, 0.4) 50%, rgba(30, 41, 59, 0.8) 100%)",
-              "linear-gradient(45deg, rgba(30, 41, 59, 0.8) 0%, rgba(88, 28, 135, 0.4) 50%, rgba(51, 65, 85, 0.6) 100%)"
-            ]
-          }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        />
-        
-        {/* Partículas flutuantes */}
-        {Array.from({ length: 15 }).map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-purple-400/30 rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -30, 0],
-              x: [0, Math.random() * 20 - 10, 0],
-              opacity: [0.2, 0.8, 0.2],
-              scale: [1, 1.5, 1],
-            }}
-            transition={{
-              duration: 4 + Math.random() * 4,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-              ease: "easeInOut"
-            }}
-          />
-        ))}
+    <section ref={sectionRef} id="contato" className="relative overflow-hidden min-h-screen safe-area-top" style={{ backgroundColor: '#161616' }}>
+      {/* Fundo limpo */}
 
-        {/* Efeito de brilho no cursor */}
-        <motion.div
-          className="absolute w-96 h-96 rounded-full pointer-events-none mix-blend-soft-light"
-          style={{
-            background: "radial-gradient(circle, rgba(251, 146, 60, 0.1) 0%, transparent 70%)",
-            x: springX,
-            y: springY,
-            translateX: "-50%",
-            translateY: "-50%"
-          }}
-        />
-      </div>
-
-      <div 
-        className="container max-w-7xl mx-auto relative z-10 py-16 md:py-24 lg:py-32 px-4"
-        style={{ transform: `translateY(${offsetY * 0.1}px)` }}
-      >
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-start">
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <motion.p 
-                className="text-sm font-medium text-primary uppercase tracking-wider"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+              <div 
+                className="container-responsive relative z-10 py-4 sm:py-8 md:py-12 lg:py-24 xl:py-32"
+                style={{ transform: `translateY(${offsetY * 0.1}px)` }}
               >
-                Conheça a Inteligência em Negócios
-              </motion.p>
-              
-              <motion.h1 
-                className="text-2xl font-bold tracking-tight text-balance sm:text-4xl md:text-5xl lg:text-6xl leading-tight"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-              >
-                <motion.span
-                  className="inline-block bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent bg-300% animate-gradient"
-                  initial={{ backgroundPosition: "0% 50%" }}
-                  animate={{ backgroundPosition: "100% 50%" }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  Imagine ter toda a jornada
-                </motion.span>
-                <br />
-                <motion.span
-                  className="inline-block"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 1.2 }}
-                >
-                  do seu cliente na palma da sua mão?
-                </motion.span>
-              </motion.h1>
-              
-              <motion.p 
-                className="text-base sm:text-lg md:text-xl text-muted-foreground text-pretty leading-relaxed"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.8 }}
-              >
-                Monitore os seus passos, do funil de vendas até o sucesso, e transforme os dados da sua empresa em
-                decisões estratégicas.
-              </motion.p>
-            </div>
-          </div>
+                <div className="grid gap-4 sm:gap-8 md:gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+                  <div className="space-y-4 sm:space-y-6 md:space-y-8 text-center lg:text-left">
+                    <div className="space-y-2 sm:space-y-3 md:space-y-4">
+                      <motion.h1 
+                        className="text-responsive-2xl font-bold tracking-tight text-balance leading-tight text-white"
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.4 }}
+                      >
+                        <motion.span
+                          className="inline-block"
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.6, delay: 0.6 }}
+                        >
+                          Imagine ter toda a <span style={{ color: 'rgb(255, 234, 0)' }}>jornada do cliente</span> na palma da sua mão?
+                        </motion.span>
+                      </motion.h1>
+                      
+                      <motion.h2 
+                        className="text-responsive-lg text-gray-300 text-pretty leading-relaxed max-w-2xl mx-auto lg:mx-0"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.7, delay: 0.8 }}
+                      >
+                        Monitore os seus passos, do funil de vendas até o sucesso, e transforme os dados da sua empresa em 
+                        <span style={{ color: 'rgb(255, 234, 0)' }} className="font-semibold"> decisões estratégicas</span>.
+                      </motion.h2>
+                    </div>
+                  </div>
 
           <div className="lg:pl-8 w-full">
             {/* Mockup + CTA + Form colapsável */}
             <div className="w-full max-w-2xl mx-auto text-center">
               <motion.div 
                 ref={mockupRef}
-                className="relative mx-auto w-[280px] h-[200px] sm:w-[32rem] sm:h-[24rem] md:w-[36rem] md:h-[28rem] flex items-center justify-center"
+                className="relative mx-auto w-[280px] h-[200px] xs:w-[300px] xs:h-[220px] sm:w-[320px] sm:h-[240px] md:w-[400px] md:h-[300px] lg:w-[32rem] lg:h-[24rem] xl:w-[36rem] xl:h-[28rem] flex items-center justify-center"
                 initial={{ opacity: 0, scale: 0.8, rotateY: 25 }}
                 animate={{ opacity: 1, scale: 1, rotateY: 0 }}
                 transition={{ duration: 1, delay: 1, ease: "easeOut" }}
@@ -181,46 +126,65 @@ export function HeroSection() {
                     ease: "easeInOut"
                   }}
                 />
-                <img 
-                  src="/dual-iphone-mockup.svg" 
-                  alt="Dual iPhone Mockup" 
-                  className="w-full h-full object-contain relative z-10"
-                />
+                <div className="relative w-full h-full flex items-center justify-center">
+                  {/* Mockups duplos com as novas imagens */}
+                  <div className="relative w-full h-full">
+                    {/* Imagem frontal */}
+                    <motion.div
+                      className="absolute left-0 top-0 w-[60%] h-[80%] rounded-2xl overflow-hidden shadow-2xl"
+                      animate={{ y: [0, 8, 0] }}
+                      transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+                    >
+                      <img 
+                        src="/WhatsApp Image 2025-10-07 at 16.21.22.jpeg" 
+                        alt="Mockup frontal" 
+                        className="w-full h-full object-cover"
+                      />
+                    </motion.div>
+                    
+                    {/* Imagem traseira */}
+                    <motion.div
+                      className="absolute -right-[10%] bottom-[5%] w-[60%] h-[80%] rounded-2xl overflow-hidden shadow-2xl rotate-[-15deg]"
+                      animate={{ y: [0, -6, 0] }}
+                      transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                    >
+                      <img 
+                        src="/WhatsApp Image 2025-10-07 at 16.21.00.jpeg" 
+                        alt="Mockup traseiro" 
+                        className="w-full h-full object-cover"
+                      />
+                    </motion.div>
+                  </div>
+                </div>
               </motion.div>
               
-              <motion.h3 
-                className="mt-6 text-xl font-semibold"
+              <motion.div 
+                className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-md sm:max-w-none mx-auto px-4 sm:px-0"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.4 }}
               >
-                Pronto para dar o próximo passo?
-              </motion.h3>
-              
               <motion.button 
                 id="cta-toggle-form" 
                 onClick={toggleForm}
-                className="group relative mt-3 inline-flex items-center justify-center rounded-md px-8 py-4 text-base bg-[#fb923c] hover:bg-[#f97316] text-background font-semibold overflow-hidden transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.6 }}
+                  className="group relative inline-flex items-center justify-center rounded-lg px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base text-gray-black font-semibold overflow-hidden transition-all duration-300 shadow-lg hover:shadow-xl hover:bg-gradient-to-r hover:from-[rgb(229, 186, 0)] hover:to-[rgb(255, 234, 0)] touch-target w-full sm:w-auto"
+                  style={{ background: 'linear-gradient(to right, rgb(255, 234, 0), rgb(229, 186, 0))' }}
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <span className="relative z-10">Solicitar contato</span>
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-600"
-                  initial={{ x: "-100%" }}
-                  whileHover={{ x: "0%" }}
-                  transition={{ duration: 0.3 }}
-                />
-                <motion.div
-                  className="absolute inset-0 bg-slate-800/20"
-                  initial={{ scale: 0, opacity: 0 }}
-                  whileTap={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.1 }}
-                />
+                  <span className="relative z-10">Começar grátis</span>
               </motion.button>
+                
+                <motion.button 
+                  onClick={openDemo}
+                  className="group relative inline-flex items-center justify-center rounded-lg px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base border-2 font-semibold transition-all duration-300 hover:bg-[rgb(255, 234, 0)] hover:text-[#161616] touch-target w-full sm:w-auto"
+                  style={{ borderColor: 'rgb(255, 234, 0)', color: 'rgb(255, 234, 0)' }}
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <span className="relative z-10">Ver demonstração</span>
+                </motion.button>
+              </motion.div>
               
               <motion.div 
                 id="contact-collapsible" 
@@ -251,13 +215,14 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="container max-w-7xl mx-auto relative z-10 pb-16 px-4">
+      <div className="container-responsive relative z-10 pb-8 sm:pb-12 md:pb-16">
         <motion.div
+          className="pt-4 sm:pt-6 md:pt-8"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 2 }}
         >
-          <div className="relative bg-gradient-to-r from-primary to-primary/80 rounded-2xl p-8 text-center overflow-hidden">
+          <div className="relative bg-gradient-to-r from-primary to-primary/80 rounded-2xl p-4 sm:p-6 md:p-8 text-center overflow-hidden shadow-lg">
             <motion.div
               className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent"
               animate={{
@@ -272,7 +237,7 @@ export function HeroSection() {
             />
             <div className="relative z-10">
               <motion.p 
-                className="text-lg md:text-xl font-medium text-primary-foreground"
+                className="text-responsive-lg font-medium text-primary-foreground"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 2.2 }}
@@ -280,7 +245,7 @@ export function HeroSection() {
                 Um upgrade estratégico para suas campanhas.
               </motion.p>
               <motion.p 
-                className="text-sm text-primary-foreground/80 mt-2"
+                className="text-responsive-sm text-primary-foreground/80 mt-2"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 2.4 }}
