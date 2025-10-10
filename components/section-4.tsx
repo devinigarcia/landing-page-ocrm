@@ -179,7 +179,7 @@ export function Section4() {
     "Assinatura Contratos",
     "Gestão da Carteira de Contratos",
     "Recorrências (Boletos)",
-    "Régua de cobrança",
+    "Régua de Cobrança",
     "Financeiro Gerencial",
     "ROI de Campanhas",
     "Gestão de Entregáveis",
@@ -189,7 +189,7 @@ export function Section4() {
   return (
     <section className="spacing-responsive relative overflow-hidden" style={{ backgroundColor: '#161616' }}>
       <div className="container-responsive relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 sm:mb-12">
                   <motion.h1 
                     className="text-responsive-2xl font-bold text-white mb-6 sm:mb-8"
                     initial={{ opacity: 0, y: 30 }}
@@ -209,7 +209,7 @@ export function Section4() {
                   >
                     <p>
                       Gerenciar máquinas, fluxo de caixa, equipes, logística, publicidade... 
-                      A gestão de uma empresa é um desafio complexo que vai muito além de um simples funil de vendas.
+                      A gestão de uma empresa é um <span style={{ color: 'rgb(255, 234, 0)' }}>desafio</span> complexo que vai <span style={{ color: 'rgb(255, 234, 0)' }}>muito além</span> de um simples funil de vendas.
                     </p>
                     
                     <p className="font-semibold text-responsive-lg" style={{ color: 'rgb(255, 234, 0)' }}>
@@ -217,15 +217,15 @@ export function Section4() {
                     </p>
                     
                     <p>
-                      O OCRM é um hub completo de soluções corporativas que reúne tudo em um só lugar. 
-                      A sua gestão fragmentada que te obrigava a ter um aplicativo para:
+                      O OCRM é um <span style={{ color: 'rgb(255, 234, 0)' }}>hub completo</span> de soluções corporativas que reúne tudo em um só lugar. 
+                      A sua gestão <span style={{ color: 'rgb(255, 234, 0)' }}>fragmentada</span> que te obrigava a ter um aplicativo para:
                     </p>
                   </motion.div>
         </div>
 
         {/* Lista de Funcionalidades */}
         <motion.div 
-          className="grid-responsive-3 mb-8 sm:mb-12"
+          className="grid-responsive-3 mb-6 sm:mb-8"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -234,8 +234,8 @@ export function Section4() {
           {functionalities.map((func, index) => (
             <motion.div
               key={index}
-              className="functionality-block flex items-center gap-2 sm:gap-3 p-3 sm:p-4 rounded-lg border border-yellow-bright/20"
-              style={{ backgroundColor: 'rgb(174, 174, 174)' }}
+              className="functionality-block flex items-center gap-2 sm:gap-3 p-3 sm:p-4 rounded-lg border border-yellow-bright/20 relative"
+              style={{ backgroundColor: 'rgb(255, 234, 0)' }}
               initial={{ opacity: 0, y: 30, scale: 0.8 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ 
@@ -248,11 +248,11 @@ export function Section4() {
               onMouseLeave={() => setHoveredBlock(null)}
             >
               <div 
-                className="functionality-dot w-2 h-2 rounded-full flex-shrink-0" 
-                style={{ backgroundColor: 'rgb(255, 234, 0)' }}
+                className="functionality-dot w-2 h-2 rounded-full flex-shrink-0 absolute left-3 sm:left-4" 
+                style={{ backgroundColor: 'rgb(0, 0, 0)' }}
               />
               <span 
-                className="functionality-text font-medium text-xs sm:text-sm" 
+                className="functionality-text font-medium text-xs sm:text-sm text-center w-full" 
                 style={{ color: 'rgb(0, 0, 0)' }}
               >
                 {func}
@@ -263,7 +263,7 @@ export function Section4() {
 
         {/* Mensagem de Solução */}
         <motion.div 
-          className="text-center mb-12"
+          className="text-center mb-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.8 }}

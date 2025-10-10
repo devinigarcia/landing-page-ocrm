@@ -52,7 +52,7 @@ export function JourneySection() {
                     { feature: "Assinatura Contratos", others: false, ocrm: true },
                     { feature: "Gestão da Carteira de Contratos", others: false, ocrm: true },
                     { feature: "Recorrências (Boletos)", others: false, ocrm: true },
-                    { feature: "Régua de cobrança", others: false, ocrm: true },
+                    { feature: "Régua de Cobrança", others: false, ocrm: true },
                     { feature: "Financeiro Gerencial", others: false, ocrm: true },
                     { feature: "ROI de Campanhas", others: false, ocrm: true },
                     { feature: "Gestão de Entregáveis", others: false, ocrm: true },

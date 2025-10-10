@@ -169,7 +169,7 @@ export function Section3() {
       ocrm: true
     },
     {
-      name: "Régua de cobrança",
+      name: "Régua de Cobrança",
       otherCRMs: false,
       ocrm: true
     },
@@ -200,7 +200,7 @@ export function Section3() {
       {/* Fundo limpo */}
       
       <div className="container-responsive relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 sm:mb-12">
                   <motion.h1 
                     className="text-responsive-2xl font-bold text-white mb-6 sm:mb-8"
                     initial={{ opacity: 0, y: 30 }}
@@ -212,7 +212,7 @@ export function Section3() {
                   </motion.h1>
                   
                   <motion.p
-                    className="text-responsive-lg text-gray-300 max-w-4xl mx-auto mb-8 sm:mb-12"
+                    className="text-responsive-lg text-gray-300 max-w-4xl mx-auto mb-6 sm:mb-8"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, delay: 0.4 }}
@@ -227,33 +227,33 @@ export function Section3() {
 
         {/* Tabela Comparativa - Desktop */}
         <motion.div 
-          className="hidden lg:block rounded-2xl shadow-2xl overflow-hidden mb-12 sm:mb-16 border border-yellow-bright/20"
+          className="hidden lg:block rounded-2xl shadow-2xl overflow-hidden mb-8 sm:mb-12 border border-yellow-bright/20"
           style={{ backgroundColor: 'rgb(71, 71, 71)' }}
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="overflow-x-auto">
-            <table className="w-full min-w-[600px]">
+          <div className="overflow-x-auto px-2">
+            <table className="w-full">
               <thead className="bg-gray-black">
                 <tr>
                   <th 
-                    className="px-6 py-4 text-left text-sm font-semibold table-header"
+                    className="px-1 py-2 text-left text-sm font-semibold table-header"
                     style={{ color: 'rgb(255, 234, 0)' }}
                     onClick={() => setSelectedColumn(selectedColumn === 'funcionalidade' ? null : 'funcionalidade')}
                   >
                     Funcionalidade
                   </th>
                   <th 
-                    className="px-6 py-4 text-center text-sm font-semibold table-header"
+                    className="px-1 py-2 text-center text-sm font-semibold table-header"
                     style={{ color: 'rgb(255, 234, 0)' }}
                     onClick={() => setSelectedColumn(selectedColumn === 'outros' ? null : 'outros')}
                   >
                     Outros CRMs
                   </th>
                   <th 
-                    className="px-6 py-4 text-center text-sm font-semibold table-header"
+                    className="px-1 py-2 text-center text-sm font-semibold table-header"
                     style={{ color: 'rgb(255, 234, 0)' }}
                     onClick={() => setSelectedColumn(selectedColumn === 'ocrm' ? null : 'ocrm')}
                   >
@@ -282,36 +282,36 @@ export function Section3() {
                     }}
                   >
                     <td 
-                      className="px-6 py-4 text-sm font-medium text-white transition-colors duration-300"
+                      className="px-1 py-2 text-base font-medium text-white transition-colors duration-300"
                       style={{ 
                         color: selectedColumn === 'funcionalidade' ? 'rgb(255, 234, 0)' : 'white'
                       }}
                     >
                       {feature.name}
                     </td>
-                    <td className="px-6 py-4 text-center">
+                    <td className="px-1 py-2 text-center">
                       {feature.otherCRMs ? (
                         <motion.div 
-                          className="inline-flex items-center justify-center w-6 h-6 bg-green-500/20 rounded-full border border-green-500/30"
+                          className="inline-flex items-center justify-center w-6 h-6 bg-green-500 rounded-full border border-green-500"
                           whileHover={{ scale: 1.1 }}
                           transition={{ duration: 0.2 }}
                         >
-                          <span className="text-green-400 text-sm">✓</span>
+                          <span className="text-white text-sm font-bold">✓</span>
                         </motion.div>
                       ) : (
-                        <div className="inline-flex items-center justify-center w-6 h-6 bg-gray-500/20 rounded-full border border-gray-500/30">
-                          <span className="text-gray-400 text-sm">–</span>
+                        <div className="inline-flex items-center justify-center w-6 h-6 bg-gray-500 rounded-full border border-gray-500">
+                          <span className="text-white text-sm font-bold">–</span>
                         </div>
                       )}
                     </td>
-                    <td className="px-6 py-4 text-center">
+                    <td className="px-3 py-4 text-center">
                       {feature.ocrm ? (
                         <motion.div 
                           className="checkmark-ocrm inline-flex items-center justify-center w-6 h-6 rounded-full border" 
                           style={{ 
-                            backgroundColor: selectedColumn === 'ocrm' ? 'rgba(34, 197, 94, 0.4)' : 'rgba(34, 197, 94, 0.2)', 
-                            borderColor: selectedColumn === 'ocrm' ? 'rgb(34, 197, 94)' : 'rgba(34, 197, 94, 0.3)',
-                            boxShadow: selectedColumn === 'ocrm' ? '0 0 15px rgba(34, 197, 94, 0.3)' : 'none'
+                            backgroundColor: 'rgb(34, 197, 94)', 
+                            borderColor: 'rgb(34, 197, 94)',
+                            boxShadow: selectedColumn === 'ocrm' ? '0 0 15px rgba(34, 197, 94, 0.5)' : '0 0 5px rgba(34, 197, 94, 0.3)'
                           }}
                           whileHover={{ scale: 1.1 }}
                           transition={{ duration: 0.2 }}
@@ -319,16 +319,16 @@ export function Section3() {
                           <span 
                             className="text-sm font-bold" 
                             style={{ 
-                              color: selectedColumn === 'ocrm' ? 'rgb(34, 197, 94)' : 'rgb(34, 197, 94)',
-                              textShadow: selectedColumn === 'ocrm' ? '0 0 5px rgba(34, 197, 94, 0.5)' : 'none'
+                              color: 'white',
+                              textShadow: '0 0 2px rgba(0, 0, 0, 0.5)'
                             }}
                           >
                             ✓
                           </span>
                         </motion.div>
                       ) : (
-                        <div className="inline-flex items-center justify-center w-6 h-6 bg-gray-500/20 rounded-full border border-gray-500/30">
-                          <span className="text-gray-400 text-sm">–</span>
+                        <div className="inline-flex items-center justify-center w-6 h-6 bg-gray-500 rounded-full border border-gray-500">
+                          <span className="text-white text-sm font-bold">–</span>
                         </div>
                       )}
                     </td>
@@ -341,7 +341,7 @@ export function Section3() {
 
         {/* Cards Mobile - Versão Mobile */}
         <motion.div 
-          className="lg:hidden space-y-3 mb-8 sm:mb-12"
+          className="lg:hidden space-y-3 mb-6 sm:mb-8"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}

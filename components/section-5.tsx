@@ -141,7 +141,7 @@ export function Section5() {
                       whileHover={{ y: -2 }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      <span className="relative z-10">Começar Agora</span>
+                      <span className="relative z-10">Começar agora</span>
                       <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </motion.button>
           </div>

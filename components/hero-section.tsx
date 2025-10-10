@@ -57,11 +57,11 @@ export function HeroSection() {
   const titleText = "Imagine ter toda a jornada do seu cliente na palma da sua mão?"
   
   return (
-    <section ref={sectionRef} id="contato" className="relative overflow-hidden min-h-screen safe-area-top" style={{ backgroundColor: '#161616' }}>
+    <section ref={sectionRef} id="contato" className="relative overflow-hidden safe-area-top" style={{ backgroundColor: '#161616' }}>
       {/* Fundo limpo */}
 
               <div 
-                className="container-responsive relative z-10 py-4 sm:py-8 md:py-12 lg:py-24 xl:py-32"
+                className="container-responsive relative z-10 py-4 sm:py-6 md:py-8 lg:py-12 xl:py-16"
                 style={{ transform: `translateY(${offsetY * 0.1}px)` }}
               >
                 <div className="grid gap-4 sm:gap-8 md:gap-12 lg:grid-cols-2 lg:gap-16 items-center">
