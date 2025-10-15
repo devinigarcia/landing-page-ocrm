@@ -234,8 +234,8 @@ export function Section4() {
               O OCRM é um{" "}
               <span style={{ color: "rgb(255, 234, 0)" }}>hub completo</span> de
               soluções corporativas que reúne tudo em um só lugar. A sua gestão{" "}
-              <span style={{ color: "rgb(255, 234, 0)" }}>fragmentada</span> que
-              te obrigava a ter um aplicativo para:
+              <span style={{ color: "#FFFFFF" }}>fragmentada</span> que te
+              obrigava a ter um aplicativo para:
             </p>
           </motion.div>
         </div>

@@ -250,20 +250,23 @@ export function Section3() {
 
         {/* Tabela Comparativa - Desktop */}
         <motion.div
-          className="hidden lg:block rounded-2xl shadow-2xl overflow-hidden mb-8 sm:mb-12 border border-yellow-bright/20"
-          style={{ backgroundColor: "rgb(71, 71, 71)" }}
+          className="hidden lg:block rounded-2xl shadow-2xl overflow-hidden mb-8 sm:mb-12 border border-yellow-bright/20 mx-auto"
+          style={{
+            backgroundColor: "rgb(71, 71, 71)",
+            maxWidth: "calc(48rem + 12rem)",
+          }}
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="overflow-x-auto px-2">
-            <table className="w-full">
-              <thead className="bg-gray-black">
+          <div className="overflow-x-auto px-4">
+            <table className="w-full table-fixed">
+              <thead style={{ borderBottom: "1px solid white" }}>
                 <tr>
                   <th
-                    className="px-1 py-2 text-left text-sm font-semibold table-header"
-                    style={{ color: "rgb(255, 234, 0)" }}
+                    className="px-4 py-4 text-left text-xl font-bold table-header"
+                    style={{ color: "#FFFFFF", width: "60%" }}
                     onClick={() =>
                       setSelectedColumn(
                         selectedColumn === "funcionalidade"
@@ -272,29 +275,29 @@ export function Section3() {
                       )
                     }
                   >
-                    Funcionalidade
+                    Funcionalidade:
                   </th>
                   <th
-                    className="px-1 py-2 text-center text-sm font-semibold table-header"
-                    style={{ color: "rgb(255, 234, 0)" }}
+                    className="px-3 py-4 text-center text-xl font-bold table-header"
+                    style={{ color: "#FFFFFF", width: "20%" }}
                     onClick={() =>
                       setSelectedColumn(
                         selectedColumn === "outros" ? null : "outros"
                       )
                     }
                   >
-                    Outros CRMs
+                    Outros CRMs:
                   </th>
                   <th
-                    className="px-1 py-2 text-center text-sm font-semibold table-header"
-                    style={{ color: "rgb(255, 234, 0)" }}
+                    className="px-3 py-4 text-center text-xl font-bold table-header"
+                    style={{ color: "#FFFFFF", width: "20%" }}
                     onClick={() =>
                       setSelectedColumn(
                         selectedColumn === "ocrm" ? null : "ocrm"
                       )
                     }
                   >
-                    OCRM
+                    OCRM:
                   </th>
                 </tr>
               </thead>
@@ -325,7 +328,7 @@ export function Section3() {
                     }}
                   >
                     <td
-                      className="px-1 py-2 text-base font-medium text-white transition-colors duration-300"
+                      className="px-4 py-3 text-xl font-bold text-white transition-colors duration-300"
                       style={{
                         color:
                           selectedColumn === "funcionalidade"
@@ -335,42 +338,52 @@ export function Section3() {
                     >
                       {feature.name}
                     </td>
-                    <td className="px-1 py-2 text-center">
+                    <td className="px-3 py-3 text-center">
                       {feature.otherCRMs ? (
                         <motion.div
-                          className="inline-flex items-center justify-center w-6 h-6 bg-green-500 rounded-full border border-green-500"
-                          whileHover={{ scale: 1.1 }}
+                          className="inline-flex items-center justify-center w-7 h-7 rounded-full"
+                          style={{
+                            backgroundColor: "rgb(34, 197, 94)",
+                            border: "2px solid rgb(34, 197, 94)",
+                          }}
+                          whileHover={{ scale: 1.15 }}
                           transition={{ duration: 0.2 }}
                         >
-                          <span className="text-white text-sm font-bold">
+                          <span className="text-white text-base font-bold">
                             ✓
                           </span>
                         </motion.div>
                       ) : (
-                        <div className="inline-flex items-center justify-center w-6 h-6 bg-gray-500 rounded-full border border-gray-500">
-                          <span className="text-white text-sm font-bold">
+                        <div
+                          className="inline-flex items-center justify-center w-7 h-7 rounded-full"
+                          style={{
+                            backgroundColor: "rgb(107, 114, 128)",
+                            border: "2px solid rgb(107, 114, 128)",
+                          }}
+                        >
+                          <span className="text-white text-base font-bold">
                             –
                           </span>
                         </div>
                       )}
                     </td>
-                    <td className="px-3 py-4 text-center">
+                    <td className="px-3 py-3 text-center">
                       {feature.ocrm ? (
                         <motion.div
-                          className="checkmark-ocrm inline-flex items-center justify-center w-6 h-6 rounded-full border"
+                          className="checkmark-ocrm inline-flex items-center justify-center w-7 h-7 rounded-full"
                           style={{
                             backgroundColor: "rgb(34, 197, 94)",
-                            borderColor: "rgb(34, 197, 94)",
+                            border: "2px solid rgb(34, 197, 94)",
                             boxShadow:
                               selectedColumn === "ocrm"
                                 ? "0 0 15px rgba(34, 197, 94, 0.5)"
                                 : "0 0 5px rgba(34, 197, 94, 0.3)",
                           }}
-                          whileHover={{ scale: 1.1 }}
+                          whileHover={{ scale: 1.15 }}
                           transition={{ duration: 0.2 }}
                         >
                           <span
-                            className="text-sm font-bold"
+                            className="text-base font-bold"
                             style={{
                               color: "white",
                               textShadow: "0 0 2px rgba(0, 0, 0, 0.5)",
@@ -380,8 +393,14 @@ export function Section3() {
                           </span>
                         </motion.div>
                       ) : (
-                        <div className="inline-flex items-center justify-center w-6 h-6 bg-gray-500 rounded-full border border-gray-500">
-                          <span className="text-white text-sm font-bold">
+                        <div
+                          className="inline-flex items-center justify-center w-7 h-7 rounded-full"
+                          style={{
+                            backgroundColor: "rgb(107, 114, 128)",
+                            border: "2px solid rgb(107, 114, 128)",
+                          }}
+                        >
+                          <span className="text-white text-base font-bold">
                             –
                           </span>
                         </div>
@@ -428,7 +447,7 @@ export function Section3() {
             >
               <div className="flex items-center justify-between">
                 <div className="flex-1">
-                  <h4 className="text-sm font-medium text-white mb-2">
+                  <h4 className="text-lg font-bold text-white mb-2">
                     {feature.name}
                   </h4>
                 </div>
@@ -438,12 +457,24 @@ export function Section3() {
                   <div className="flex flex-col items-center gap-1">
                     <span className="text-xs text-gray-400">Outros</span>
                     {feature.otherCRMs ? (
-                      <div className="w-6 h-6 bg-green-500/20 rounded-full border border-green-500/30 flex items-center justify-center">
-                        <span className="text-green-400 text-xs">✓</span>
+                      <div
+                        className="w-7 h-7 rounded-full flex items-center justify-center"
+                        style={{
+                          backgroundColor: "rgb(34, 197, 94)",
+                          border: "2px solid rgb(34, 197, 94)",
+                        }}
+                      >
+                        <span className="text-white text-sm font-bold">✓</span>
                       </div>
                     ) : (
-                      <div className="w-6 h-6 bg-gray-500/20 rounded-full border border-gray-500/30 flex items-center justify-center">
-                        <span className="text-gray-400 text-xs">–</span>
+                      <div
+                        className="w-7 h-7 rounded-full flex items-center justify-center"
+                        style={{
+                          backgroundColor: "rgb(107, 114, 128)",
+                          border: "2px solid rgb(107, 114, 128)",
+                        }}
+                      >
+                        <span className="text-white text-sm font-bold">–</span>
                       </div>
                     )}
                   </div>
@@ -454,14 +485,24 @@ export function Section3() {
                       OCRM
                     </span>
                     {feature.ocrm ? (
-                      <div className="w-6 h-6 bg-green-500/30 rounded-full border border-green-500 flex items-center justify-center shadow-lg">
-                        <span className="text-green-400 text-xs font-bold">
-                          ✓
-                        </span>
+                      <div
+                        className="w-7 h-7 rounded-full flex items-center justify-center shadow-lg"
+                        style={{
+                          backgroundColor: "rgb(34, 197, 94)",
+                          border: "2px solid rgb(34, 197, 94)",
+                        }}
+                      >
+                        <span className="text-white text-sm font-bold">✓</span>
                       </div>
                     ) : (
-                      <div className="w-6 h-6 bg-gray-500/20 rounded-full border border-gray-500/30 flex items-center justify-center">
-                        <span className="text-gray-400 text-xs">–</span>
+                      <div
+                        className="w-7 h-7 rounded-full flex items-center justify-center"
+                        style={{
+                          backgroundColor: "rgb(107, 114, 128)",
+                          border: "2px solid rgb(107, 114, 128)",
+                        }}
+                      >
+                        <span className="text-white text-sm font-bold">–</span>
                       </div>
                     )}
                   </div>

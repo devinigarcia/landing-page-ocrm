@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 interface LogoProps {
   className?: string;
@@ -13,102 +14,54 @@ export function Logo({
   variant = "primary",
   size = "md",
 }: LogoProps) {
-  const sizeClasses = {
-    sm: "text-lg",
-    md: "text-2xl",
-    lg: "text-3xl",
-    xl: "text-4xl",
+  const sizeValues = {
+    sm: { width: 60, height: 20 },
+    md: { width: 90, height: 30 },
+    lg: { width: 120, height: 40 },
+    xl: { width: 150, height: 50 },
   };
 
-  const variantClasses = {
-    light: "text-white",
-    dark: "text-gray-900",
-    primary: "text-primary",
-  };
+  const { width, height } = sizeValues[size];
 
   return (
-    <div
-      className={cn(
-        "font-bold font-sans tracking-tight",
-        sizeClasses[size],
-        variantClasses[variant],
-        className
-      )}
-    >
-      <span className="relative inline-flex items-center">
-        {/* Círculo "o" - geometria perfeita com bordas arredondadas */}
-        <span className="relative inline-block w-[0.6em] h-[0.6em] rounded-full border-2 border-current">
-          {/* Preenchimento sutil para dar profundidade */}
-          <span className="absolute inset-0 rounded-full bg-current opacity-10"></span>
-        </span>
-        {/* Ponto separador */}
-        <span className="mx-1 text-[0.8em]">.</span>
-        {/* Texto "crm" - fonte sans-serif, peso normal */}
-        <span className="font-normal text-[0.9em]">crm</span>
-      </span>
+    <div className={cn("relative", className)}>
+      <Image
+        src="/WhatsApp Image 2025-10-15 at 11.24.57.jpeg"
+        alt="OCRM Logo"
+        width={width}
+        height={height}
+        className="object-contain"
+        priority
+      />
     </div>
   );
 }
 
-// Versão SVG para máxima precisão técnica
+// Versão SVG para máxima precisão técnica (agora usando a mesma imagem)
 export function LogoSVG({
   className,
   variant = "primary",
   size = "md",
 }: LogoProps) {
   const sizeValues = {
-    sm: { width: 60, height: 20, fontSize: 12 },
-    md: { width: 80, height: 26, fontSize: 16 },
-    lg: { width: 100, height: 32, fontSize: 20 },
-    xl: { width: 120, height: 40, fontSize: 24 },
+    sm: { width: 60, height: 20 },
+    md: { width: 90, height: 30 },
+    lg: { width: 120, height: 40 },
+    xl: { width: 150, height: 50 },
   };
 
-  const colors = {
-    light: "#ffffff",
-    dark: "#000000",
-    primary: "hsl(var(--primary))",
-  };
-
-  const { width, height, fontSize } = sizeValues[size];
-  const color = colors[variant];
+  const { width, height } = sizeValues[size];
 
   return (
-    <svg
-      width={width}
-      height={height}
-      viewBox="0 0 120 40"
-      className={className}
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      {/* Círculo "o" - geometria perfeita com bordas arredondadas */}
-      <circle
-        cx="20"
-        cy="20"
-        r="16"
-        fill="none"
-        stroke={color}
-        strokeWidth="2.5"
-        className="opacity-90"
+    <div className={cn("relative", className)}>
+      <Image
+        src="/WhatsApp Image 2025-10-15 at 11.24.57.jpeg"
+        alt="OCRM Logo"
+        width={width}
+        height={height}
+        className="object-contain"
+        priority
       />
-
-      {/* Preenchimento sutil para profundidade */}
-      <circle cx="20" cy="20" r="14" fill={color} opacity="0.1" />
-
-      {/* Ponto separador */}
-      <circle cx="45" cy="20" r="1.5" fill={color} />
-
-      {/* Texto "crm" - sans-serif, peso normal */}
-      <text
-        x="55"
-        y="26"
-        fontSize={fontSize * 0.7}
-        fontFamily="system-ui, -apple-system, sans-serif"
-        fontWeight="400"
-        fill={color}
-        className="tracking-tight"
-      >
-        crm
-      </text>
-    </svg>
+    </div>
   );
 }
