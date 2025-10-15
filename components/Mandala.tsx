@@ -78,11 +78,12 @@ export default function Mandala() {
         viewBox="0 0 1200 900"
         xmlns="http://www.w3.org/2000/svg"
       >
+        {/* 🔹 Linhas agora com brilho real e cor igual à Datlo */}
         <defs>
           <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#9d8cff" stopOpacity="0.1" />
-            <stop offset="50%" stopColor="#9d8cff" stopOpacity="0.5" />
-            <stop offset="100%" stopColor="#9d8cff" stopOpacity="0.1" />
+            <stop offset="0%" stopColor="#B7A6FF" stopOpacity="0.9" />
+            <stop offset="50%" stopColor="#CBB7FF" stopOpacity="1" />
+            <stop offset="100%" stopColor="#B7A6FF" stopOpacity="0.9" />
           </linearGradient>
         </defs>
 
@@ -95,19 +96,22 @@ export default function Mandala() {
               key={i}
               d={`M 200 ${y} C 480 ${y + 200}, 700 700, 600 780`}
               stroke="url(#lineGrad)"
-              strokeWidth={isActive ? 2.5 : 1.5}
-              strokeOpacity={isActive ? 1 : 0.3}
+              strokeWidth={isActive ? 2.8 : 2.2}
+              strokeOpacity={1}
               fill="transparent"
               initial={{ pathLength: 0 }}
               animate={{
                 pathLength: 1,
-                opacity: [0.5, 1, 0.5],
+                opacity: [0.85, 1, 0.85],
               }}
               transition={{
                 duration: 3,
                 delay: i * 0.1,
                 ease: "easeInOut",
                 repeat: Infinity,
+              }}
+              style={{
+                filter: "drop-shadow(0 0 10px rgba(183,166,255,0.9))",
               }}
             />
           );
@@ -122,19 +126,22 @@ export default function Mandala() {
               key={i}
               d={`M 1000 ${y} C 720 ${y + 200}, 500 700, 600 780`}
               stroke="url(#lineGrad)"
-              strokeWidth={isActive ? 2.5 : 1.5}
-              strokeOpacity={isActive ? 1 : 0.3}
+              strokeWidth={isActive ? 2.8 : 2.2}
+              strokeOpacity={1}
               fill="transparent"
               initial={{ pathLength: 0 }}
               animate={{
                 pathLength: 1,
-                opacity: [0.5, 1, 0.5],
+                opacity: [0.85, 1, 0.85],
               }}
               transition={{
                 duration: 3,
                 delay: i * 0.1,
                 ease: "easeInOut",
                 repeat: Infinity,
+              }}
+              style={{
+                filter: "drop-shadow(0 0 10px rgba(183,166,255,0.9))",
               }}
             />
           );
@@ -150,7 +157,7 @@ export default function Mandala() {
             onMouseLeave={() => setHovered(null)}
             className={`px-4 py-2 rounded-md text-sm border backdrop-blur-sm transition cursor-pointer ${
               hovered === i
-                ? "border-[#9d8cff] text-white bg-neutral-900/70"
+                ? "border-[#b8a5ff] text-white bg-neutral-900/70"
                 : "border-gray-700 text-gray-300 bg-neutral-900/40"
             }`}
             whileHover={{ scale: 1.05 }}
@@ -169,7 +176,7 @@ export default function Mandala() {
             onMouseLeave={() => setHovered(null)}
             className={`px-4 py-2 rounded-md text-sm border backdrop-blur-sm transition cursor-pointer ${
               hovered === i + dataLeft.length
-                ? "border-[#9d8cff] text-white bg-neutral-900/70"
+                ? "border-[#b8a5ff] text-white bg-neutral-900/70"
                 : "border-gray-700 text-gray-300 bg-neutral-900/40"
             }`}
             whileHover={{ scale: 1.05 }}
