@@ -85,7 +85,8 @@
     @apply border-border;
   }
   body {
-    @apply bg-black text-white font-[Inter];
+    @apply text-white font-[Inter];
+    background-color: #000000 !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -93,6 +94,7 @@
 
   /* Melhorar scroll suave em dispositivos móveis */
   html {
+    background-color: #000000 !important;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
   }
@@ -328,6 +330,6 @@
 
 /* Mandala - Efeitos SVG */
 svg path {
-  filter: drop-shadow(0 0 10px rgba(157, 140, 255, 0.4));
+  filter: drop-shadow(0 0 10px rgba(200, 200, 200, 0.4));
   transition: all 0.3s ease;
 }

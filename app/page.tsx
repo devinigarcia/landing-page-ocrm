@@ -1,14 +1,14 @@
-import { Header } from "@/components/header"
-import { HeroSection } from "@/components/hero-section"
-import { Section2 } from "@/components/section-2"
-import { Section3 } from "@/components/section-3"
-import { Section4 } from "@/components/section-4"
-import { Section5 } from "@/components/section-5"
-import { Footer } from "@/components/footer"
+import { Header } from "@/components/header";
+import { HeroSection } from "@/components/hero-section";
+import { Section2 } from "@/components/section-2";
+import { Section3 } from "@/components/section-3";
+import { Section4 } from "@/components/section-4";
+import { Section5 } from "@/components/section-5";
+import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen" style={{ backgroundColor: "#000000" }}>
       <Header />
       <HeroSection />
       <Section2 />
@@ -17,5 +17,5 @@ export default function Home() {
       <Section5 />
       <Footer />
     </main>
-  )
+  );
 }

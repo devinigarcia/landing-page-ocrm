@@ -1,34 +1,40 @@
-"use client"
+"use client";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 interface LogoProps {
-  className?: string
-  variant?: "light" | "dark" | "primary"
-  size?: "sm" | "md" | "lg" | "xl"
+  className?: string;
+  variant?: "light" | "dark" | "primary";
+  size?: "sm" | "md" | "lg" | "xl";
 }
 
-export function Logo({ className, variant = "primary", size = "md" }: LogoProps) {
+export function Logo({
+  className,
+  variant = "primary",
+  size = "md",
+}: LogoProps) {
   const sizeClasses = {
     sm: "text-lg",
-    md: "text-2xl", 
+    md: "text-2xl",
     lg: "text-3xl",
-    xl: "text-4xl"
-  }
+    xl: "text-4xl",
+  };
 
   const variantClasses = {
     light: "text-white",
     dark: "text-gray-900",
-    primary: "text-primary"
-  }
+    primary: "text-primary",
+  };
 
   return (
-    <div className={cn(
-      "font-bold font-sans tracking-tight",
-      sizeClasses[size],
-      variantClasses[variant],
-      className
-    )}>
+    <div
+      className={cn(
+        "font-bold font-sans tracking-tight",
+        sizeClasses[size],
+        variantClasses[variant],
+        className
+      )}
+    >
       <span className="relative inline-flex items-center">
         {/* Círculo "o" - geometria perfeita com bordas arredondadas */}
         <span className="relative inline-block w-[0.6em] h-[0.6em] rounded-full border-2 border-current">
@@ -41,26 +47,30 @@ export function Logo({ className, variant = "primary", size = "md" }: LogoProps)
         <span className="font-normal text-[0.9em]">crm</span>
       </span>
     </div>
-  )
+  );
 }
 
 // Versão SVG para máxima precisão técnica
-export function LogoSVG({ className, variant = "primary", size = "md" }: LogoProps) {
+export function LogoSVG({
+  className,
+  variant = "primary",
+  size = "md",
+}: LogoProps) {
   const sizeValues = {
     sm: { width: 60, height: 20, fontSize: 12 },
     md: { width: 80, height: 26, fontSize: 16 },
     lg: { width: 100, height: 32, fontSize: 20 },
-    xl: { width: 120, height: 40, fontSize: 24 }
-  }
+    xl: { width: 120, height: 40, fontSize: 24 },
+  };
 
   const colors = {
     light: "#ffffff",
-    dark: "#000000", 
-    primary: "hsl(var(--primary))"
-  }
+    dark: "#000000",
+    primary: "hsl(var(--primary))",
+  };
 
-  const { width, height, fontSize } = sizeValues[size]
-  const color = colors[variant]
+  const { width, height, fontSize } = sizeValues[size];
+  const color = colors[variant];
 
   return (
     <svg
@@ -80,24 +90,13 @@ export function LogoSVG({ className, variant = "primary", size = "md" }: LogoPro
         strokeWidth="2.5"
         className="opacity-90"
       />
-      
+
       {/* Preenchimento sutil para profundidade */}
-      <circle
-        cx="20"
-        cy="20"
-        r="14"
-        fill={color}
-        opacity="0.1"
-      />
-      
+      <circle cx="20" cy="20" r="14" fill={color} opacity="0.1" />
+
       {/* Ponto separador */}
-      <circle
-        cx="45"
-        cy="20"
-        r="1.5"
-        fill={color}
-      />
-      
+      <circle cx="45" cy="20" r="1.5" fill={color} />
+
       {/* Texto "crm" - sans-serif, peso normal */}
       <text
         x="55"
@@ -111,5 +110,5 @@ export function LogoSVG({ className, variant = "primary", size = "md" }: LogoPro
         crm
       </text>
     </svg>
-  )
+  );
 }

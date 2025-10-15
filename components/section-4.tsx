@@ -1,27 +1,29 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useState, useEffect } from "react"
+import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 export function Section4() {
-  const [hoveredBlock, setHoveredBlock] = useState<number | null>(null)
-  const [isAnimating, setIsAnimating] = useState(false)
+  const [hoveredBlock, setHoveredBlock] = useState<number | null>(null);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const openWhatsApp = () => {
-    const phoneNumber = '5511999999999' // Exemplo: 55 (código do país) 11 (DDD) 999999999 (número)
-    const message = encodeURIComponent('Olá! Gostaria de saber mais sobre o OCRM.')
-    window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank')
-  }
+    const phoneNumber = "5511999999999"; // Exemplo: 55 (código do país) 11 (DDD) 999999999 (número)
+    const message = encodeURIComponent(
+      "Olá! Gostaria de saber mais sobre o OCRM."
+    );
+    window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
+  };
 
   const openMigrationGuide = () => {
     // Abrir guia de migração - pode ser um modal ou página
-    window.open('https://ocrm.com.br/migracao', '_blank')
-  }
+    window.open("https://ocrm.com.br/migracao", "_blank");
+  };
 
   // Adicionar CSS para animações elegantes dos blocos
   useEffect(() => {
-    if (typeof document !== 'undefined') {
-      const style = document.createElement('style')
+    if (typeof document !== "undefined") {
+      const style = document.createElement("style");
       style.textContent = `
         @keyframes elegant-float {
           0%, 100% { 
@@ -163,18 +165,20 @@ export function Section4() {
           border-radius: 16px;
           animation: morphing-border 3s ease-in-out infinite;
         }
-      `
-      if (!document.head.querySelector('style[data-functionality-animations]')) {
-        style.setAttribute('data-functionality-animations', 'true')
-        document.head.appendChild(style)
+      `;
+      if (
+        !document.head.querySelector("style[data-functionality-animations]")
+      ) {
+        style.setAttribute("data-functionality-animations", "true");
+        document.head.appendChild(style);
       }
     }
-  }, [])
+  }, []);
 
   const functionalities = [
     "Funil de Vendas",
     "Gestão de Comissões (Vendas)",
-    "Ranking de Vendas", 
+    "Ranking de Vendas",
     "Redação Contratos",
     "Assinatura Contratos",
     "Gestão da Carteira de Contratos",
@@ -183,48 +187,61 @@ export function Section4() {
     "Financeiro Gerencial",
     "ROI de Campanhas",
     "Gestão de Entregáveis",
-    "BI + Relatórios"
-  ]
+    "BI + Relatórios",
+  ];
 
   return (
-    <section className="spacing-responsive relative overflow-hidden" style={{ backgroundColor: '#161616' }}>
+    <section
+      className="spacing-responsive relative overflow-hidden"
+      style={{ backgroundColor: "#000000" }}
+    >
       <div className="container-responsive relative z-10">
         <div className="text-center mb-8 sm:mb-12">
-                  <motion.h1 
-                    className="text-responsive-2xl font-bold text-white mb-6 sm:mb-8"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    viewport={{ once: true }}
-                  >
-                    O funil nunca foi suficiente
-                  </motion.h1>
-                  
-                  <motion.div 
-                    className="max-w-4xl mx-auto space-y-4 sm:space-y-6 text-responsive-base text-gray-300"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7, delay: 0.4 }}
-                    viewport={{ once: true }}
-                  >
-                    <p>
-                      Gerenciar máquinas, fluxo de caixa, equipes, logística, publicidade... 
-                      A gestão de uma empresa é um <span style={{ color: 'rgb(255, 234, 0)' }}>desafio</span> complexo que vai <span style={{ color: 'rgb(255, 234, 0)' }}>muito além</span> de um simples funil de vendas.
-                    </p>
-                    
-                    <p className="font-semibold text-responsive-lg" style={{ color: 'rgb(255, 234, 0)' }}>
-                      Nós temos a solução para fazer tudo isso funcionar!
-                    </p>
-                    
-                    <p>
-                      O OCRM é um <span style={{ color: 'rgb(255, 234, 0)' }}>hub completo</span> de soluções corporativas que reúne tudo em um só lugar. 
-                      A sua gestão <span style={{ color: 'rgb(255, 234, 0)' }}>fragmentada</span> que te obrigava a ter um aplicativo para:
-                    </p>
-                  </motion.div>
+          <motion.h1
+            className="text-responsive-2xl font-bold text-white mb-6 sm:mb-8"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            O funil nunca foi suficiente
+          </motion.h1>
+
+          <motion.div
+            className="max-w-4xl mx-auto space-y-4 sm:space-y-6 text-responsive-base text-gray-300"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <p>
+              Gerenciar máquinas, fluxo de caixa, equipes, logística,
+              publicidade... A gestão de uma empresa é um{" "}
+              <span style={{ color: "rgb(255, 234, 0)" }}>desafio</span>{" "}
+              complexo que vai{" "}
+              <span style={{ color: "rgb(255, 234, 0)" }}>muito além</span> de
+              um simples funil de vendas.
+            </p>
+
+            <p
+              className="font-semibold text-responsive-lg"
+              style={{ color: "rgb(255, 234, 0)" }}
+            >
+              Nós temos a solução para fazer tudo isso funcionar!
+            </p>
+
+            <p>
+              O OCRM é um{" "}
+              <span style={{ color: "rgb(255, 234, 0)" }}>hub completo</span> de
+              soluções corporativas que reúne tudo em um só lugar. A sua gestão{" "}
+              <span style={{ color: "rgb(255, 234, 0)" }}>fragmentada</span> que
+              te obrigava a ter um aplicativo para:
+            </p>
+          </motion.div>
         </div>
 
         {/* Lista de Funcionalidades */}
-        <motion.div 
+        <motion.div
           className="grid-responsive-3 mb-6 sm:mb-8"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -235,25 +252,25 @@ export function Section4() {
             <motion.div
               key={index}
               className="functionality-block flex items-center gap-2 sm:gap-3 p-3 sm:p-4 rounded-lg border border-yellow-bright/20 relative"
-              style={{ backgroundColor: 'rgb(255, 234, 0)' }}
+              style={{ backgroundColor: "rgb(255, 234, 0)" }}
               initial={{ opacity: 0, y: 30, scale: 0.8 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ 
-                duration: 0.6, 
+              transition={{
+                duration: 0.6,
                 delay: index * 0.1,
-                ease: [0.25, 0.46, 0.45, 0.94]
+                ease: [0.25, 0.46, 0.45, 0.94],
               }}
               viewport={{ once: true }}
               onMouseEnter={() => setHoveredBlock(index)}
               onMouseLeave={() => setHoveredBlock(null)}
             >
-              <div 
-                className="functionality-dot w-2 h-2 rounded-full flex-shrink-0 absolute left-3 sm:left-4" 
-                style={{ backgroundColor: 'rgb(0, 0, 0)' }}
+              <div
+                className="functionality-dot w-2 h-2 rounded-full flex-shrink-0 absolute left-3 sm:left-4"
+                style={{ backgroundColor: "rgb(0, 0, 0)" }}
               />
-              <span 
-                className="functionality-text font-medium text-xs sm:text-sm text-center w-full" 
-                style={{ color: 'rgb(0, 0, 0)' }}
+              <span
+                className="functionality-text font-medium text-xs sm:text-sm text-center w-full"
+                style={{ color: "rgb(0, 0, 0)" }}
               >
                 {func}
               </span>
@@ -262,7 +279,7 @@ export function Section4() {
         </motion.div>
 
         {/* Mensagem de Solução */}
-        <motion.div 
+        <motion.div
           className="text-center mb-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -272,32 +289,38 @@ export function Section4() {
           <p className="text-responsive-lg text-gray-300 mb-4 sm:mb-6">
             É passado! Aqui, você encontra tudo em um único sistema.
           </p>
-          
-                  <p className="text-responsive-xl font-bold italic mb-6 sm:mb-8" style={{ color: 'rgb(255, 234, 0)' }}>
-                    Decisões inteligentes nascem de dados bem interpretados
-                  </p>
+
+          <p
+            className="text-responsive-xl font-bold italic mb-6 sm:mb-8"
+            style={{ color: "rgb(255, 234, 0)" }}
+          >
+            Decisões inteligentes nascem de dados bem interpretados
+          </p>
         </motion.div>
 
         {/* CTA Section */}
-        <motion.div 
+        <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-                  <motion.button 
-                    onClick={openWhatsApp}
-                    className="text-gray-black font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-lg transition-all duration-300 hover:scale-105 hover:bg-gradient-to-r hover:from-[rgb(229, 186, 0)] hover:to-[rgb(255, 234, 0)] shadow-lg hover:shadow-xl touch-target w-full sm:w-auto"
-                    style={{ background: 'linear-gradient(to right, rgb(255, 234, 0), rgb(229, 186, 0))' }}
-                    whileHover={{ y: -2 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <span className="hidden sm:inline">Dê início à sua migração</span>
-                    <span className="sm:hidden">Iniciar migração</span>
-                  </motion.button>
+          <motion.button
+            onClick={openWhatsApp}
+            className="text-gray-black font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-lg transition-all duration-300 hover:scale-105 hover:bg-gradient-to-r hover:from-[rgb(229, 186, 0)] hover:to-[rgb(255, 234, 0)] shadow-lg hover:shadow-xl touch-target w-full sm:w-auto"
+            style={{
+              background:
+                "linear-gradient(to right, rgb(255, 234, 0), rgb(229, 186, 0))",
+            }}
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <span className="hidden sm:inline">Dê início à sua migração</span>
+            <span className="sm:hidden">Iniciar migração</span>
+          </motion.button>
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

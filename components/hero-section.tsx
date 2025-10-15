@@ -69,7 +69,7 @@ export function HeroSection() {
       ref={sectionRef}
       id="contato"
       className="relative overflow-hidden safe-area-top"
-      style={{ backgroundColor: "#161616" }}
+      style={{ backgroundColor: "#000000" }}
     >
       {/* Fundo limpo */}
 
