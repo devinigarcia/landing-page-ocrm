@@ -20,7 +20,7 @@ export default function Mandala() {
 
   return (
     <div
-      className="relative w-full h-screen flex items-center justify-center overflow-hidden"
+      className="relative w-full h-screen hidden md:flex items-center justify-center overflow-hidden"
       style={{ backgroundColor: "#000000" }}
     >
       {/* Núcleo - esfera amarela com logo */}
@@ -158,6 +158,79 @@ export default function Mandala() {
             />
           );
         })}
+      </svg>
+
+      {/* 🔹 Linhas adicionais animadas estilo Datlo */}
+      <svg
+        className="absolute w-full h-full top-0 left-0 pointer-events-none"
+        viewBox="0 0 1200 900"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient id="datloLine" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#bcbcbc" stopOpacity="0.4" />
+            <stop offset="50%" stopColor="#e5e5e5" stopOpacity="0.9" />
+            <stop offset="100%" stopColor="#bcbcbc" stopOpacity="0.4" />
+          </linearGradient>
+        </defs>
+
+        {/* Linhas da esquerda */}
+        {[
+          { startY: 150, curveY: 250 },
+          { startY: 430, curveY: 540 },
+          { startY: 700, curveY: 815 },
+        ].map((pos, i) => (
+          <motion.path
+            key={`left-extra-${i}`}
+            d={`M 180 ${pos.startY} C 400 ${pos.curveY}, 560 500, 600 500`}
+            stroke="url(#datloLine)"
+            strokeWidth="2"
+            fill="transparent"
+            strokeLinecap="round"
+            style={{
+              filter: "drop-shadow(0 0 6px rgba(200,200,200,0.3))",
+            }}
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{
+              pathLength: 1,
+              opacity: 0.8,
+            }}
+            transition={{
+              duration: 3.5 + i * 0.3,
+              ease: "easeInOut",
+              repeat: 0, // Executa apenas uma vez
+            }}
+          />
+        ))}
+
+        {/* Linhas da direita */}
+        {[
+          { startY: 90, curveY: 210 },
+          { startY: 393, curveY: 370 },
+          { startY: 570, curveY: 900 },
+        ].map((pos, i) => (
+          <motion.path
+            key={`right-extra-${i}`}
+            d={`M 1020 ${pos.startY} C 800 ${pos.curveY}, 640 500, 600 500`}
+            stroke="url(#datloLine)"
+            strokeWidth="2"
+            fill="transparent"
+            strokeLinecap="round"
+            style={{
+              filter: "drop-shadow(0 0 6px rgba(200,200,200,0.3))",
+            }}
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{
+              pathLength: 1,
+              opacity: 0.8,
+            }}
+            transition={{
+              duration: 3.5 + i * 0.3,
+              ease: "easeInOut",
+              repeat: 0, // Executa apenas uma vez
+            }}
+          />
+        ))}
       </svg>
 
       {/* Blocos Esquerda */}
