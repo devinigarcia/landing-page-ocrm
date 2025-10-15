@@ -223,34 +223,26 @@ export function Section3() {
             transition={{ duration: 0.7, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            A empresa precisa de{" "}
-            <span
-              style={{ color: "rgb(255, 234, 0)" }}
-              className="font-semibold"
-            >
-              clareza
-            </span>
-            . OCRM{" "}
+            OCRM{" "}
             <span
               style={{ color: "rgb(255, 234, 0)" }}
               className="font-semibold"
             >
               organiza, automatiza e revela
-            </span>
-            . Isso permite decisões mais{" "}
+            </span>{" "}
+            para empresas que precisam de{" "}
+            <span
+              style={{ color: "rgb(255, 234, 0)" }}
+              className="font-semibold"
+            >
+              clareza
+            </span>{" "}
+            e decisões mais{" "}
             <span
               style={{ color: "rgb(255, 234, 0)" }}
               className="font-semibold"
             >
               inteligentes
-            </span>{" "}
-            e
-            <span
-              style={{ color: "rgb(255, 234, 0)" }}
-              className="font-semibold"
-            >
-              {" "}
-              experiências melhores
             </span>
             .
           </motion.p>

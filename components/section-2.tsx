@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 
 export function Section2() {
   const sectionRef = useRef(null);
@@ -19,25 +20,21 @@ export function Section2() {
     {
       title: "Unificação de Dados",
       description: "Visão integral em um só lugar",
-      icon: "🔗",
       attribute: "Integrador",
     },
     {
       title: "Automação de Processos",
       description: "Eficiência sem perder controle",
-      icon: "⚡",
       attribute: "Inteligente",
     },
     {
       title: "Respostas em Tempo Real",
       description: "Indicadores e alertas instantâneos",
-      icon: "📊",
       attribute: "Preciso",
     },
     {
       title: "Insights Estratégicos",
       description: "Padrões e tendências que orientam o futuro",
-      icon: "🎯",
       attribute: "Estratégico",
     },
   ];
@@ -69,15 +66,14 @@ export function Section2() {
             transition={{ duration: 0.7, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            O OCRM organiza, automatiza e revela dados em tempo real.
+            O OCRM organiza, automatiza e revela dados em{" "}
             <span
               style={{ color: "rgb(255, 234, 0)" }}
               className="font-semibold"
             >
-              {" "}
-              Sabedoria digital
-            </span>{" "}
-            para decisões fundamentadas.
+              tempo real
+            </span>
+            .
           </motion.h2>
 
           <motion.p
@@ -87,19 +83,19 @@ export function Section2() {
             transition={{ duration: 0.7, delay: 0.6 }}
             viewport={{ once: true }}
           >
+            Tenha{" "}
             <span
               style={{ color: "rgb(255, 234, 0)" }}
               className="font-semibold"
             >
-              Visão integral
+              visão integral
             </span>{" "}
-            da jornada do cliente.
+            da jornada do cliente com{" "}
             <span
               style={{ color: "rgb(255, 234, 0)" }}
               className="font-semibold"
             >
-              {" "}
-              Indicadores em tempo real
+              indicadores em tempo real
             </span>{" "}
             que transformam dados em vantagem competitiva.
           </motion.p>
@@ -161,38 +157,158 @@ export function Section2() {
                 viewport={{ once: true }}
               />
 
-              <motion.div
-                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-1 sm:mb-2 md:mb-3 lg:mb-4 relative z-10"
-                initial={{
-                  scale: 0,
-                  rotate: -360,
-                  y: -50,
-                  opacity: 0,
-                }}
-                whileInView={{
-                  scale: 1,
-                  rotate: 0,
-                  y: 0,
-                  opacity: 1,
-                }}
-                transition={{
-                  duration: 1.5,
-                  delay: index * 0.3 + 0.4,
-                  ease: [0.68, -0.55, 0.265, 1.55],
-                  type: "spring",
-                  stiffness: 200,
-                }}
-                viewport={{ once: true }}
-                whileHover={{
-                  scale: 1.3,
-                  rotate: [0, -10, 10, 0],
-                  transition: { duration: 0.5 },
-                }}
-                animate={{}}
-                transition={{}}
-              >
-                {feature.icon}
-              </motion.div>
+              {/* Ícones para os cards */}
+              {index === 0 && (
+                <motion.div
+                  className="w-12 h-12 sm:w-14 sm:h-14 md:w-18 md:h-18 mb-3 sm:mb-4 relative z-10 mx-auto flex items-center justify-center"
+                  initial={{
+                    scale: 0,
+                    rotate: -360,
+                    y: -50,
+                    opacity: 0,
+                  }}
+                  whileInView={{
+                    scale: 1,
+                    rotate: 0,
+                    y: 0,
+                    opacity: 1,
+                  }}
+                  transition={{
+                    duration: 1.5,
+                    delay: index * 0.3 + 0.4,
+                    ease: [0.68, -0.55, 0.265, 1.55],
+                    type: "spring",
+                    stiffness: 200,
+                  }}
+                  viewport={{ once: true }}
+                  whileHover={{
+                    scale: 1.1,
+                    transition: { duration: 0.3 },
+                  }}
+                >
+                  <Image
+                    src="/gerenciamento-de-banco-de-dados.png"
+                    alt="Gerenciamento de Banco de Dados"
+                    width={72}
+                    height={72}
+                    className="object-contain"
+                  />
+                </motion.div>
+              )}
+
+              {index === 1 && (
+                <motion.div
+                  className="w-12 h-12 sm:w-14 sm:h-14 md:w-18 md:h-18 mb-3 sm:mb-4 relative z-10 mx-auto flex items-center justify-center"
+                  initial={{
+                    scale: 0,
+                    rotate: -360,
+                    y: -50,
+                    opacity: 0,
+                  }}
+                  whileInView={{
+                    scale: 1,
+                    rotate: 0,
+                    y: 0,
+                    opacity: 1,
+                  }}
+                  transition={{
+                    duration: 1.5,
+                    delay: index * 0.3 + 0.4,
+                    ease: [0.68, -0.55, 0.265, 1.55],
+                    type: "spring",
+                    stiffness: 200,
+                  }}
+                  viewport={{ once: true }}
+                  whileHover={{
+                    scale: 1.1,
+                    transition: { duration: 0.3 },
+                  }}
+                >
+                  <Image
+                    src="/automacao.png"
+                    alt="Automação"
+                    width={72}
+                    height={72}
+                    className="object-contain"
+                  />
+                </motion.div>
+              )}
+
+              {index === 2 && (
+                <motion.div
+                  className="w-12 h-12 sm:w-14 sm:h-14 md:w-18 md:h-18 mb-3 sm:mb-4 relative z-10 mx-auto flex items-center justify-center"
+                  initial={{
+                    scale: 0,
+                    rotate: -360,
+                    y: -50,
+                    opacity: 0,
+                  }}
+                  whileInView={{
+                    scale: 1,
+                    rotate: 0,
+                    y: 0,
+                    opacity: 1,
+                  }}
+                  transition={{
+                    duration: 1.5,
+                    delay: index * 0.3 + 0.4,
+                    ease: [0.68, -0.55, 0.265, 1.55],
+                    type: "spring",
+                    stiffness: 200,
+                  }}
+                  viewport={{ once: true }}
+                  whileHover={{
+                    scale: 1.1,
+                    transition: { duration: 0.3 },
+                  }}
+                >
+                  <Image
+                    src="/tempo.png"
+                    alt="Tempo Real"
+                    width={72}
+                    height={72}
+                    className="object-contain"
+                  />
+                </motion.div>
+              )}
+
+              {index === 3 && (
+                <motion.div
+                  className="w-12 h-12 sm:w-14 sm:h-14 md:w-18 md:h-18 mb-3 sm:mb-4 relative z-10 mx-auto flex items-center justify-center"
+                  initial={{
+                    scale: 0,
+                    rotate: -360,
+                    y: -50,
+                    opacity: 0,
+                  }}
+                  whileInView={{
+                    scale: 1,
+                    rotate: 0,
+                    y: 0,
+                    opacity: 1,
+                  }}
+                  transition={{
+                    duration: 1.5,
+                    delay: index * 0.3 + 0.4,
+                    ease: [0.68, -0.55, 0.265, 1.55],
+                    type: "spring",
+                    stiffness: 200,
+                  }}
+                  viewport={{ once: true }}
+                  whileHover={{
+                    scale: 1.1,
+                    transition: { duration: 0.3 },
+                  }}
+                >
+                  <Image
+                    src="/insights-do-consumidor.png"
+                    alt="Insights do Consumidor"
+                    width={72}
+                    height={72}
+                    className="object-contain"
+                  />
+                </motion.div>
+              )}
 
               <motion.div
                 className="text-xs font-semibold px-2 py-1 rounded-full mb-1 sm:mb-2 md:mb-3 inline-block relative z-10"
@@ -316,10 +432,7 @@ export function Section2() {
                 "linear-gradient(to right, rgb(255, 234, 0), rgb(229, 186, 0))",
             }}
           >
-            <span className="hidden sm:inline">
-              Fale conosco e garanta tudo isso
-            </span>
-            <span className="sm:hidden">Fale conosco</span>
+            Quero vender com estratégia
           </button>
         </motion.div>
       </div>
