@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { CentralDiagram } from "@/components/central-diagram"
+import Mandala from "@/components/Mandala"
 
 export function Section5() {
   const openWhatsApp = () => {
@@ -72,7 +72,7 @@ export function Section5() {
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <CentralDiagram />
+          <Mandala />
         </motion.div>
 
         {/* Lista de Gestões */}
