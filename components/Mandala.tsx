@@ -176,9 +176,9 @@ export default function Mandala() {
 
         {/* Linhas da esquerda */}
         {[
-          { startY: 150, curveY: 250 },
-          { startY: 430, curveY: 540 },
-          { startY: 700, curveY: 815 },
+          { startY: 150, curveY: 500 },
+          { startY: 430, curveY: 560 },
+          { startY: 700, curveY: 915 },
         ].map((pos, i) => (
           <motion.path
             key={`left-extra-${i}`}
@@ -206,8 +206,8 @@ export default function Mandala() {
         {/* Linhas da direita */}
         {[
           { startY: 90, curveY: 210 },
-          { startY: 393, curveY: 370 },
-          { startY: 570, curveY: 900 },
+          { startY: 393, curveY: 570 },
+          { startY: 650, curveY: 850 },
         ].map((pos, i) => (
           <motion.path
             key={`right-extra-${i}`}
